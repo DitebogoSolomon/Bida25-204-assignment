@@ -22,6 +22,14 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
 });
 
 
+<script>
+  document.querySelector(".dropbtn").addEventListener("click", function(e) 
+    e.preventDefault()
+    document.querySelector(".dropdown-content").classList.toggle("show");
+  );
+</script>
+
+
 
 
 
