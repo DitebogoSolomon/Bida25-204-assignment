@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Premier Excellence</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+     <nav>
+
+    <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html">Contact</a></li>
+                 <li><a href="history.html">History</a></li>
+          <li><a href="feedback.html">Feedback</a></li>        
+    </ul>
+</nav>
+
+<div class="slideshow">
+  <div class="slide active" style="background-image:url('images/IMG-20260407-WA0049.jpg');">
+    <div class="slide-content">
+      <h2>Contact Us</h2>
+    </div>
+  </div>
+
+  <div class="slide" style="background-image:url('images/IMG-20260407-WA0093.jpg');">
+    <div class="slide-content">
+      <h2>Get in touch</h2>
+    </div>
+  </div>
+</div>
+
+ <section class="contact-container">
+
+    <div class="contact-info">
+        <h2>Contact Information</h2>
+
+        <p><strong>Kabo Solomon</strong>
+
+        <p>
+            +267 75 770 775 <br>
+         
+        </p>
+
+        <p>
+            premierexcellencepty@gmail.com
+        </p>
+
+        <p>
+            P O Box 321 ABG Sebele,Faborone
+        </p>
+    </div>
+
+    <div class="contact-form">
+
+        <form id="contactForm">
+
+            <input type="text" id="name"
+            placeholder="Full Name" required>
+
+            <input type="email" id="email"
+            placeholder="Email Address" required>
+
+            <input type="tel" id="phone"
+            placeholder="Phone Number">
+
+            <select id="service" required>
+
+                <option value="">
+                    Select Services You Are Interested In
+                </option>
+
+                <option>Building development</option>
+                <option>Property Renovations</option>
+                <option>Building contractors</option>
+                <option>Turnkey projects</option>
+                <option>Constuction</option>
+              
+
+            </select>
+
+            <textarea id="message" rows="5"
+            placeholder="Your Message / Enquiry"
+            required></textarea>
+
+            <button type="submit" class="btn-orange">
+                Send Enquiry
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+<script>
+const slides = document.querySelectorAll(".slide");
+
+let currentSlide = 0;
+
+function showSlide(index) {
+
+    slides.forEach((slide) => {
+        slide.classList.remove("active");
+    });
+
+    slides[index].classList.add("active");
+}
+
+setInterval(() => {
+
+    currentSlide++;
+
+    if (currentSlide >= slides.length) {
+        currentSlide = 0;
+    }
+
+    showSlide(currentSlide);
+
+}, 4000);
+</script>
+<footer class="footer">
+            <div class="footer-container">
+                <h3>PREMIER EXCELLENCE | Building brilliance together</h3>
+                <p>Building experts you can trust</p>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy;2026 Premier Excellence</p>
+            </div>
+          </footer>
+      <script src="script.js"></script>
+</body>
+</html>
