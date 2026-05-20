@@ -29,6 +29,21 @@ document.getElementById("myForm").addEventListener("submit", function(e) {
   );
 </script>
 
+const dropdown = document.querySelector(".dropdown");
+
+dropdown.addEventListener("click", () => {
+  dropdown.classList.toggle("active");
+});
+
+
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+  navLinks.classList.toggle("active");
+});
+
 
 
 
