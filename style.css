@@ -438,3 +438,136 @@ form select:focus {
 .whatsapp-btn:hover {
   background-color: #1ebe5d;
 }
+
+/* ===== OUR STORY / HISTORY SECTION ===== */
+
+.history-section {
+    background: #f8f9fb;
+    padding: 80px 10%;
+    font-family: Arial, sans-serif;
+}
+
+.history-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.history-header h2 {
+    font-size: 42px;
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.history-header h3 {
+    font-size: 24px;
+    color: #f59e0b;
+    margin-bottom: 15px;
+}
+
+.history-header p {
+    max-width: 700px;
+    margin: auto;
+    color: #64748b;
+    font-size: 17px;
+    line-height: 1.7;
+}
+
+/* ===== TIMELINE ===== */
+
+.timeline {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    padding-left: 30px;
+    border-left: 4px solid #f59e0b;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+    background: #ffffff;
+    padding: 25px 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: -42px;
+    top: 30px;
+    width: 18px;
+    height: 18px;
+    background: #f59e0b;
+    border-radius: 50%;
+    border: 4px solid #fff;
+}
+
+/* ===== CONTENT ===== */
+
+.timeline-year {
+    display: inline-block;
+    background: #f59e0b;
+    color: white;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.timeline-title {
+    font-size: 24px;
+    color: #1e293b;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.timeline-subtitle {
+    font-size: 18px;
+    color: #334155;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.timeline-text {
+    color: #64748b;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media (max-width: 768px) {
+
+    .history-section {
+        padding: 60px 6%;
+    }
+
+    .history-header h2 {
+        font-size: 32px;
+    }
+
+    .history-header h3 {
+        font-size: 20px;
+    }
+
+    .timeline {
+        padding-left: 20px;
+    }
+
+    .timeline-item {
+        padding: 20px;
+    }
+
+    .timeline-title {
+        font-size: 20px;
+    }
+}
