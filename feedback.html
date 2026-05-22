@@ -1,61 +1,138 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Premier Excellence</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback — Premier Excellence</title>
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Barlow:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-    
+  <style>
+    .feedback-wrap {
+      max-width: 580px;
+      margin: 0 auto;
+    }
+    .rating-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 0.5rem;
+    }
+    .rating-btn {
+      background: #fff;
+      border: 1px solid rgba(0,0,0,0.15);
+      border-radius: 2px;
+      padding: 8px 18px;
+      font-family: 'Barlow', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: #555;
+      cursor: pointer;
+      transition: border-color 0.2s, background 0.2s, color 0.2s;
+    }
+    .rating-btn:hover,
+    .rating-btn.selected {
+      border-color: var(--gold);
+      background: rgba(184,134,11,0.06);
+      color: var(--gold);
+    }
+  </style>
 </head>
 <body>
-   <nav class="navbar">
-  <div class="logo">Premier Excellence</div>
-  <div class="menu-toggle" id="menu-toggle">
-    ☰
+
+  <nav>
+    <a class="nav-logo" href="index.html">Premier Excellence</a>
+    <ul class="nav-links">
+      <li class="dropdown">
+        <a href="index.html">Home ▾</a>
+        <div class="dropdown-menu">
+          <a href="projects.html">Projects</a>
+          <a href="feedback.html" class="active">Feedback</a>
+          <a href="about.html">About Us</a>
+        </div>
+      </li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="history.html">History</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-header-inner fade-up">
+      <div class="badge">Your Opinion Matters</div>
+      <h1>Share Your <em>Feedback</em></h1>
+      <p>Help us improve by telling us about your experience with Premier Excellence.</p>
+    </div>
   </div>
-  <ul class="nav-links" id="nav-links">
-        <li class="dropdown">
-      <a href="index.html">Home ▾</a>
-      <ul class="dropdown-menu">
-        <li><a href="projects.html">Projects</a></li>
-        <li><a href="feedback.html">Feedback</a></li>
-        <li><a href="about.html">About Us</a></li>
-      </ul>
-       </li>
-       <li><a href="services.html">Services</a></li>
-    <li><a href="history.html">History</a></li>
-    <li><a href="contact.html">Contact</a></li>
-  </ul>
-</nav>
 
-<div class="container">
-    <h2>We Value Your Feedback</h2>
-   
-    <form id="feedbackForm">
-        <input type="text" placeholder="Your Name (optional)">
-        <input type="email" placeholder="Your Email (optional)">
+  <div class="content fade-up-2">
+    <div class="feedback-wrap">
 
-        <select>
-            <option>Feedback Type</option>
-            <option>Suggestion</option>
-            <option>General Feedback</option>
-           </select>
-        <textarea placeholder="Tell us what you think..."></textarea>
+      <!-- Replace YOUR_FORM_ID with your Formspree form ID -->
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
 
-        <button type="submit">Submit Feedback</button>
-    </form>
-<footer class="footer">
-            <div class="footer-container">
-                <h3>PREMIER EXCELLENCE | Building brilliance together</h3>
-                <p>Building experts you can trust</p>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy;2026 Premier Excellence</p>
-            </div>
-    <a href="https://www.facebook.com/share/1CiE1dyX8g/" target="_blank" class="btn btn-primary">
-  <i class="bi bi-facebook"></i> Visit Facebook
-</a>
-          </footer>
-      <script src="js/script.js"></script>
+        <div class="form-group">
+          <label for="fname">Your Name</label>
+          <input type="text" id="fname" name="name" placeholder="e.g. Mpho Dube">
+        </div>
+
+        <div class="form-group">
+          <label for="femail">Email Address</label>
+          <input type="email" id="femail" name="email" placeholder="e.g. mpho@email.com">
+        </div>
+
+        <div class="form-group">
+          <label for="ftype">Feedback Type</label>
+          <select id="ftype" name="feedback_type">
+            <option value="">Select a type...</option>
+            <option value="Compliment">Compliment</option>
+            <option value="Suggestion">Suggestion</option>
+            <option value="General Feedback">General Feedback</option>
+            <option value="Complaint">Complaint</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Overall Experience</label>
+          <div class="rating-group" id="ratingGroup">
+            <button type="button" class="rating-btn" onclick="selectRating(this,'⭐ Poor')">⭐ Poor</button>
+            <button type="button" class="rating-btn" onclick="selectRating(this,'⭐⭐ Fair')">⭐⭐ Fair</button>
+            <button type="button" class="rating-btn" onclick="selectRating(this,'⭐⭐⭐ Good')">⭐⭐⭐ Good</button>
+            <button type="button" class="rating-btn" onclick="selectRating(this,'⭐⭐⭐⭐ Great')">⭐⭐⭐⭐ Great</button>
+            <button type="button" class="rating-btn" onclick="selectRating(this,'⭐⭐⭐⭐⭐ Excellent')">⭐⭐⭐⭐⭐ Excellent</button>
+          </div>
+          <input type="hidden" id="ratingValue" name="rating" value="">
+        </div>
+
+        <div class="form-group">
+          <label for="fmessage">Your Feedback</label>
+          <textarea id="fmessage" name="message" placeholder="Tell us what you think..."></textarea>
+        </div>
+
+        <button type="submit" class="btn-gold" style="width:100%; padding:14px;">Submit Feedback</button>
+
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <div>
+      <div class="footer-brand">Premier Excellence</div>
+      <div style="margin-top:4px;">Building experts you can trust</div>
+    </div>
+    <div>©2026 Premier Excellence &nbsp;·&nbsp; <a href="https://www.facebook.com/share/1CiE1dyX8g/" target="_blank">Facebook</a></div>
+  </footer>
+
+  <script>
+    function selectRating(btn, value) {
+      document.querySelectorAll('.rating-btn').forEach(b => b.classList.remove('selected'));
+      btn.classList.add('selected');
+      document.getElementById('ratingValue').value = value;
+    }
+  </script>
+
 </body>
-</html>     
+</html>
+
